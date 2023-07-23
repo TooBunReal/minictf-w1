@@ -1,6 +1,6 @@
-### minictf-w1
+# minictf-w1
 ## Forensics
-# Dimension
+### Dimension
 - Đầu Tiên ta nhận được một fize ảnh có kích thước là 0x0.
 - Và tên bài là Dimension nên mình đã nãy ra ý tưởng dùng tool Dimension-brutefocer.
 - Tuy nhiên mình cần phải chỉnh lại code của tool một tí.
@@ -16,7 +16,7 @@
 ![image](https://github.com/TooBunReal/minictf-w1/assets/89735990/22c7c965-7ed4-4b2a-886e-84731fe40f3e)
 
 ## Web Application
-# Head1
+### Head1
 - Src:
 ```php
 <?php
@@ -43,7 +43,7 @@ show_source(__FILE__);
 
 - Flag: ```W1{ez_head1_huh}```
 
-# Head2
+### Head2
 - Src:
 ```php
 <?php
@@ -67,7 +67,7 @@ show_source(__FILE__);
 
 - Flag: ```W1{webhook_not_so_bad_huh?}```
 
-# Dejavu 
+### Dejavu 
 
 ![image](https://github.com/TooBunReal/minictf-w1/assets/89735990/b0613390-77e6-44b9-8c12-fd2e845eb5bc)
 
@@ -146,7 +146,7 @@ show_source(__FILE__);
     + Flag: ```_part③_ⓓⓔⓙⓐⓥⓤ_福🐳😁}```
 - Flag: ```W1{part1_part2_part③_ⓓⓔⓙⓐⓥⓤ_福🐳😁}```
 
-# Simple Stuff 
+### Simple Stuff 
 
 - Đây là một chall rất hay, tuy nhiên dù mình chưa thể solve nó kịp giờ thì mình vẫn muốn viết đôi chút về nó.
 - Đầu tiên đây là một trang web dùng để đọc báo lá cãi =))
