@@ -140,4 +140,18 @@ show_source(__FILE__);
 # Simple Stuff 
 
 - Đây là một chall rất hay, tuy nhiên dù mình chưa thể solve nó kịp giờ thì mình vẫn muốn viết đôi chút về nó.
-- Đầu tiên đây là một trang web dùng để đọc báo lá cãi =)) .
+- Đầu tiên đây là một trang web dùng để đọc báo lá cãi =))
+- Trang web sẽ dùng get param ```id``` để đi đến các trang báo khác.
+
+![image](https://github.com/TooBunReal/minictf-w1/assets/89735990/3067d05b-a132-41c4-b3a1-3e89b65eeac3)
+
+ - Tuy nhiên, một người anh của mình đã nói "ở đâu có include thì ở đó có LFI"
+ - Mục tiêu của chúng ta là phải đến được ```admin/index.php```.
+ - Cho nên payload của chúng ta sẽ là ```?id = ../../../admin/index.php```
+
+![image](https://github.com/TooBunReal/minictf-w1/assets/89735990/92a20e25-3d22-411b-8d95-27c648c4f498)
+
+ - Xong bây giờ nhiệm vụ của chúng ta sẽ là sqli vào đây để nhận session id ( tại vì session id được gen từ flag và user+pass thông qua hàm do_xor)
+ - Van de ky nang =)) mình k làm dc phần cuối.
+
+
